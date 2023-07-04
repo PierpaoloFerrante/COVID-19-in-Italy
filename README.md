@@ -12,8 +12,8 @@ https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full
 # Content
 
 ***Data***
-- The input data are stored in the folder "DATA": You have to to download them in a your local folder
-- Data can be directly downloaded through the "download.r" file
+- The input data are stored in the folder "DATA\Files", which contains daily condirmed cases, deaths, vaccine coverage of population and variants prevalence as well as estimated relative risks vanninated/unvaccinated of take the infection or die for it. 
+- The civil protection provide daily  incidence and death cases by region () while the ISS provide them by age class. We used both.
 
 \
 ***Statistical analysis*** 
