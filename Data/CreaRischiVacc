@@ -1,0 +1,445 @@
+###########################################################Rischi Relativi Vaccinati/non-Vaccinati dei report ISS##############################################################
+#######27/dicembre/2020-30/settembre/2021 dal rapporto ISS del 06/10/2021 (04/04/2021-03/10/2021):RR di prima e seconda dose rispetto ai non vaccinati
+#Morte (fascia 5-11 ha iniziato dal 12 dic 2021)
+RischiMVacc01<-as.data.frame(matrix(c(1,1,1,1,1,1,
+                                    2,1,1,1,1,1,
+                                    3,1,1/((100-50.8)/100),1/((100-74.1)/100),1,1,
+                                    4,1,1/((100-50.8)/100),1/((100-74.1)/100),1,1,
+                                    5,1,1/((100-88)/100),1/((100-93.3)/100),1,1,
+                                    6,1,1/((100-88)/100),1/((100-93.3)/100),1,1,
+                                    7,1,1/((100-89.6)/100),1/((100-94.7)/100),1,1,
+                                    8,1,1/((100-89.6)/100),1/((100-94.7)/100),1,1,
+                                    9,1,1/((100-77.5)/100),1/((100-94.9)/100),1,1,
+                                    10,1,1/((100-77.5)/100),1/((100-94.9)/100),1,1),nrow=10,ncol=6,byrow=TRUE))
+colnames(RischiMVacc01)<-c("CEtaCod2","IFRM0","IFRM1","IFRM2","IFRM3","IFRM4")
+
+#Contagio
+RischiCVacc01<-as.data.frame(matrix(c(1,1,1,1,1,1,
+                                    2,1,1,1,1,1,
+                                    3,1,1/((100-50.8)/100),1/((100-74.1)/100),1,1,
+                                    4,1,1/((100-50.8)/100),1/((100-74.1)/100),1,1,
+                                    5,1,1/((100-67)/100),1/((100-75.2)/100),1,1,
+                                    6,1,1/((100-67)/100),1/((100-75.2)/100),1,1,
+                                    7,1,1/((100-77.2)/100),1/((100-81.4)/100),1,1,
+                                    8,1,1/((100-77.2)/100),1/((100-81.4)/100),1,1,
+                                    9,1,1/((100-59.8)/100),1/((100-85.7)/100),1,1,
+                                    10,1,1/((100-59.8)/100),1/((100-85.7)/100),1,1),nrow=10,ncol=6,byrow=TRUE))
+colnames(RischiCVacc01)<-c("CEtaCod2","IFRC0","IFRC1","IFRC2","IFRC3","IFRC4")
+RischiVacc1<-merge(RischiMVacc01,RischiCVacc01)
+RischiVacc1<-merge(as.data.frame(unique(dati.ISS$IDDate[dati.ISS$date=="2020-12-27"]):unique(dati.ISS$IDDate[dati.ISS$date=="2021-09-30"])),RischiVacc1)
+colnames(RischiVacc1)[1]<-"IDDate"
+#######Fine aprile-settembre 2021 dal rapporto ISS del 06/10/2022(04/04/2021-03/10/2021):RR su prima e seconda dose rispetto ai non vaccinati
+
+################ottobre 2021: il rischio è calcolato per + o -180 gg dalla conclusione del cicolo vacc e non c'è booster (RR=1)
+######                     x IL BOOSTER METTO RISCHI DI NOVEMBRE           #################
+
+#Morte: rapporto ISS del 01/12/2021. periodo riferimento 08/10-07/11/2021. RR calcolati rispetto a 150 gg da fine ciclo vaccinali
+RischiMVacc02<-as.data.frame(matrix(c(1,1,1,1,1,1,
+                                    2,1,1,1,1,1,
+                                    3,1,1,2,4.9,7.2,
+                                    4,1,1,2,4.9,7.2,
+                                    5,1,1,3.4,17,5.5,
+                                    6,1,1,3.4,17,5.5,
+                                    7,1,1,4.1,18.7,13.4,
+                                    8,1,1,4.1,18.7,13.4,
+                                    9,1,1,8.7,7.3,74.1,
+                                    10,1,1,8.7,7.3,74.1),nrow=10,ncol=6,byrow=TRUE))
+
+colnames(RischiMVacc02)<-c("CEtaCod2","IFRM0","IFRM1","IFRM2","IFRM3","IFRM4")
+RischiMVacc02$IFRM1<-RischiMVacc02$IFRM2*RischiMVacc01$IFRM1/RischiMVacc01$IFRM2
+
+#Contagio: rapporto ISS del 17/11/2021, periodo riferimento 01/10-30/10/2021. RR calcolati rispetto a 180 gg da fine ciclo vaccinali
+RischiCVacc02<-as.data.frame(matrix(c(1,1,1,1,1,1,
+                                    2,1,1,1,1,1,
+                                    3,1,1,2,4.9,7.2,
+                                    4,1,1,2,4.9,7.2,
+                                    5,1,1,2,3.7,7.6,
+                                    6,1,1,2,3.7,7.6,
+                                    7,1,1,1.8,3.5,8.4,
+                                    8,1,1,1.8,3.5,8.4,
+                                    9,1,1,3.4,4.9,13.4,
+                                    10,1,1,3.4,4.9,13.4),nrow=10,ncol=6,byrow=TRUE))
+
+colnames(RischiCVacc02)<-c("CEtaCod2","IFRC0","IFRC1","IFRC2","IFRC3","IFRC4")
+RischiCVacc02$IFRC1<-RischiCVacc02$IFRC2*RischiCVacc01$IFRC1/RischiCVacc01$IFRC2
+
+RischiVacc2<-merge(RischiMVacc02,RischiCVacc02)
+RischiVacc2<-merge(as.data.frame(unique(dati.ISS$IDDate[dati.ISS$date=="2021-10-01"]):unique(dati.ISS$IDDate[dati.ISS$date=="2021-10-31"])),RischiVacc2)
+colnames(RischiVacc2)[1]<-"IDDate"
+################Fine ottobre 2021
+
+################ Novembre 2021 : ATTENZIONE NELLA MORTALITà DELLE CLASSI 0-39 (SENZA STIME) HO MESSO rr DI DICEMBRE
+#novembre 2021 4794850+2426918+792266+1163800
+#Morte: rapporto ISS del 05/01/2022. Periodo di rif. 05/11-2021-05/12/2022 RR calcolati rispetto a 120 gg da fine ciclo vaccinali
+#IFRM1 si riferisce a periodo 12/11-/12/12/2021
+RischiMVacc03<-as.data.frame(matrix(c(1,1,1,1,1,1,
+                                    2,1,1,1,1,1,
+                                    3,1,1,2,4.3,7.2,
+                                    4,1,1,2,4.3,7.2,
+                                    5,1,1,8.2,33,5.5,
+                                    6,1,1,8.2,33,5.5,
+                                    7,1,1,9,19.8,13.4,
+                                    8,1,1,9,19.8,13.4,
+                                    9,1,1,7.9,9.1,74.1,
+                                    10,1,1,7.9,9.1,74.1),nrow=10,ncol=6,byrow=TRUE))
+colnames(RischiMVacc03)<-c("CEtaCod2","IFRM0","IFRM1","IFRM2","IFRM3","IFRM4")
+RV<-c(rep(1/760046,4),rep(4/510539,2),rep(28/224492,2),rep(57/82183,2))
+RNV<-c(rep(8/3046339,4),rep(88/2698233,2),rep(497/1199938,2),rep(577/216424,2))
+RischiMVacc03$IFRM1<-RV/RNV
+#novembre 2021 (05/11/2021-05/12/2021)
+#Contagio: dal rapporto ISS del 15/12/2021. Periodo di rif. 05/11-2021-05/12/2022 RR calcolati rispetto a 150 gg da fine ciclo vaccinali
+#IFRC1 si riferisce a periodo 12/11-/12/12/2021
+RischiCVacc03<-as.data.frame(matrix(c(1,1,1,1,1,1,
+                                    2,1,1,1,1,1,
+                                    3,1,1,2,4.3,7.2,
+                                    4,1,1,2,4.3,7.2,
+                                    5,1,1,2.3,3.7,7.6,
+                                    6,1,1,2.3,3.7,7.6,
+                                    7,1,1,2.5,3.3,8.4,
+                                    8,1,1,2.5,3.3,8.4,
+                                    9,1,1,3.3,5,13.4,
+                                    10,1,1,3.3,5,13.4),nrow=10,ncol=6,byrow=TRUE))
+
+colnames(RischiCVacc03)<-c("CEtaCod2","IFRC0","IFRC1","IFRC2","IFRC3","IFRC4")
+RV<-c(rep(2871/760046,4),rep(2664/510539,2),rep(1270/224492,2),rep(302/82183,2))
+RNV<-c(rep(52862/3046339,4),rep(44643/2698233,2),rep(14383/1199938,2),rep(2786/216424,2))
+RischiCVacc03$IFRC1<-RV/RNV
+
+RischiVacc3<-merge(RischiMVacc03,RischiCVacc03)
+RischiVacc3<-merge(as.data.frame(unique(dati.ISS$IDDate[dati.ISS$date=="2021-11-01"]):unique(dati.ISS$IDDate[dati.ISS$date=="2021-11-30"])),RischiVacc3)
+colnames(RischiVacc3)[1]<-"IDDate"
+################ Fine Novembre 2021
+
+#Da qui i decessi inizano ad essere per data di diagnosi, mentre prima erano x data di morte.
+#Dal 26/01 inizia anche il dettaglio con popolazione vaccinati e non vaccinati, decessi e infezioni
+
+###############dicembre 2021 (03/12-2021-02/01/2022)
+#Morte: rapporto ISS del 26/01/2022. Periodo riferimento 03/12/2021-02/01/2022. RR calcolati rispetto a 120gg da completamento ciclo vacinale
+RischiMVacc04<-as.data.frame(matrix(c(1,1,1,2.5,2.5,2.5,
+                                    2,1,1,2.5,2.5,2.5,
+                                    3,1,1,2.5,2.5,2.5,
+                                    4,1,1,2.5,2.5,2.5,
+                                    5,1,1,10.8,16.2,9.3,
+                                    6,1,1,10.8,16.2,9.3,
+                                    7,1,1,10.2,15.8,19.8,
+                                    8,1,1,10.2,15.8,19.8,
+                                    9,1,1,6.7,7.5,38.3,
+                                    10,1,1,6.7,7.5,38.3),nrow=10,ncol=6,byrow=TRUE))
+colnames(RischiMVacc04)<-c("CEtaCod2","IFRM0","IFRM1","IFRM2","IFRM3","IFRM4")
+RV<-c(rep(1/777996,4),rep(9/493603,2),rep(40/224964,2),rep(73/82201,2))
+RNV<-c(rep(14/2765891,4),rep(167/2553007,2),rep(910/1136914,2),rep(1029/204451,2))
+RischiMVacc04$IFRM1<-RV/RNV
+
+#dicembre 2021 (03/12/2021-02/01/2022)
+#Contagio: rapporto ISS del 12/01/2022. Periodo riferimento 03/12/2021-02/01/2022. RR calcolati rispetto a 120gg da completamento ciclo vacinale
+RischiCVacc04<-as.data.frame(matrix(c(1,1,1,1.1,1.7,1.6,
+                                    2,1,1,1.1,1.7,1.6,
+                                    3,1,1,1.1,1.7,1.6,
+                                    4,1,1,1.1,1.7,1.6,
+                                    5,1,1,1.6,2.3,2.3,
+                                    6,1,1,1.6,2.3,2.3,
+                                    7,1,1,1.9,2.9,3.3,
+                                    8,1,1,1.9,2.9,3.3,
+                                    9,1,1,3.4,4.2,5.1,
+                                    10,1,1,3.4,4.2,5.1),nrow=10,ncol=6,byrow=TRUE))
+colnames(RischiCVacc04)<-c("CEtaCod2","IFRC0","IFRC1","IFRC2","IFRC3","IFRC4")
+RV<-c(rep(20010/777996,4),rep(10544/493603,2),rep(3492/224964,2),rep(571/82201,2))
+RNV<-c(rep(121905/2765891,4),rep(94879/2553007,2),rep(28894/1136914,2),rep(5734/204451,2))
+RischiCVacc04$IFRC1<-RV/RNV
+
+RischiVacc4<-merge(RischiMVacc04,RischiCVacc04)
+RischiVacc4<-merge(as.data.frame(unique(dati.ISS$IDDate[dati.ISS$date=="2021-12-01"]):unique(dati.ISS$IDDate[dati.ISS$date=="2021-12-31"])),RischiVacc4)
+colnames(RischiVacc4)[1]<-"IDDate"
+
+###############Fine dicembre 2021 
+
+################gennaio 2022 (31/12-2021-30/01/2022)
+#Morte: rapporto ISS del 02/03/2022. Periodo riferimento 07/01/2021-06/02/2022. RR calcolati rispetto a 120gg da completamento ciclo vacinale
+RischiMVacc05<-as.data.frame(matrix(c(1,1,1,5.5,11,3.7,
+                                    2,1,1,5.5,11,3.7,
+                                    3,1,1,5.5,11,3.7,
+                                    4,1,1,5.5,11,3.7,
+                                    5,1,1,5,5,7.8,
+                                    6,1,1,5,5,7.8,
+                                    7,1,1,4.4,5.2,16.1,
+                                    8,1,1,4.4,5.2,16.1,
+                                    9,1,1,4.6,5.1,15.5,
+                                    10,1,1,4.6,5.1,15.5),nrow=10,ncol=6,byrow=TRUE))
+
+colnames(RischiMVacc05)<-c("CEtaCod2","IFRM0","IFRM1","IFRM2","IFRM3","IFRM4")
+RV<-c(rep(1/790453,4),rep(17/480236,2),rep(92/222091,2),rep(188/82553,2))
+RNV<-c(rep(26/2219338,4),rep(206/2342453,2),rep(1268/954620,2),rep(1970/187961,2))
+RischiMVacc05$IFRM1<-RV/RNV
+
+#Contagio: rapporto ISS del 09/02/2022. Periodo riferimento 07/01/2022-06/02/2022. RR calcolati rispetto a 120gg da completamento ciclo vacinale
+RischiCVacc05<-as.data.frame(matrix(c(1,1,1,1.8,1.6,2.9,
+                                    2,1,1,1.8,1.6,2.9,
+                                    3,1,1,1.8,1.6,2.9,
+                                    4,1,1,1.8,1.6,2.9,
+                                    5,1,1,1.8,1.9,3.4,
+                                    6,1,1,1.8,1.9,3.4,
+                                    7,1,1,2.1,2.6,4.9,
+                                    8,1,1,2.1,2.6,4.9,
+                                    9,1,1,3.2,2.6,4.5,
+                                   10,1,1,3.2,2.6,4.5),nrow=10,ncol=6,byrow=TRUE))
+colnames(RischiCVacc05)<-c("CEtaCod2","IFRC0","IFRC1","IFRC2","IFRC3","IFRC4")
+RV<-c(rep(70633/790453,4),rep(42367/480236,2),rep(12097/222091,2),rep(2389/82553,2))
+RNV<-c(rep(342068/2219338,4),rep(317187/2248822,2),rep(99094/954620,2),rep(19198/187961,2))
+RischiCVacc05$IFRC1<-RV/RNV
+
+RischiVacc5<-merge(RischiMVacc05,RischiCVacc05)
+RischiVacc5<-merge(as.data.frame(unique(dati.ISS$IDDate[dati.ISS$date=="2022-01-01"]):unique(dati.ISS$IDDate[dati.ISS$date=="2022-01-31"])),RischiVacc5)
+colnames(RischiVacc5)[1]<-"IDDate"
+################Fine gennaio 2022 (31/12-2021-30/01/2022)
+
+################Febbraio 2022 RR MORTE MOMENTANEAMNETE uguale a Gennaio 2020 
+#Morte:: rapporto ISS del 30/03/2022. Periodo riferimento 04/02/2022-06/03/2022. RR calcolati rispetto a 120gg da completamento ciclo vacinale
+#IFRC1 dati da rapporto 30/03/2022
+RischiMVacc06<-as.data.frame(matrix(c(1,1,1,2,2,2,
+                                      2,1,1,2,2,2,
+                                      3,1,1,2,2,2,
+                                      4,1,1,2,2,2,
+                                      5,1,1,2,1.8,8,
+                                      6,1,1,2,1.8,8,
+                                      7,1,1,1.9,4.1,12.3,
+                                      8,1,1,1.9,4.1,12.3,
+                                      9,1,1,4.4,5.5,14.3,
+                                     10,1,1,4.4,5.5,14.3),nrow=10,ncol=6,byrow=TRUE))
+
+colnames(RischiMVacc06)<-c("CEtaCod2","IFRM0","IFRM1","IFRM2","IFRM3","IFRM4")
+RV<-c(rep(1/564516,2),rep(1/642811,2),rep(6/284956,2),rep(47/284956,2),rep(107/102495,2))
+RNV<-c(rep(1/2423165,2),rep(4/1920673,2),rep(48/2028509,2),rep(337/806505,2),rep(760/161413,2))
+RischiMVacc06$IFRM1<-RV/RNV
+RischiMVacc06$IFRM2
+#Contagio: rapporto 09/03/2022 (periodo rif 04/02-06-03/2022). RR calcolati rispetto a 120gg da completamento ciclo vacinale
+#IFRC1 dati popo da da rapporto 30/03/2022; dati diagnosi dfa 09/03/2022
+RischiCVacc06<-as.data.frame(matrix(c(1,1,1,2.4,1.6,2.6,
+                                      2,1,1,2.4,1.6,2.6,
+                                      3,1,1,2.4,1.6,2.6,
+                                      4,1,1,2.4,1.6,2.6,
+                                      5,1,1,2.2,1.7,2.8,
+                                      6,1,1,2.2,1.7,2.8,
+                                      7,1,1,2.3,2.4,4.2,
+                                      8,1,1,2.3,2.4,4.2,
+                                      9,1,1,3.4,2.2,4.2,
+                                     10,1,1,3.4,2.2,4.2),nrow=10,ncol=6,byrow=TRUE))
+colnames(RischiCVacc06)<-c("CEtaCod2","IFRC0","IFRC1","IFRC2","IFRC3","IFRC4")
+RV<-c(rep(18967/564516,2),rep(17558/642811,2),rep(11433/284956,2),rep(3894/284956,2),rep(1082/102495,2))
+RNV<-c(rep(107.862/2423165,2),rep(94480/1920673,2),rep(81905/2028509,2),rep(29508/806505,2),rep(6626/161413,2))
+RischiCVacc06$IFRC1<-RV/RNV
+RischiCVacc06$IFRC2
+
+RischiVacc6<-merge(RischiMVacc06,RischiCVacc06)
+RischiVacc6<-merge(as.data.frame(unique(dati.ISS$IDDate[dati.ISS$date=="2022-02-01"]):unique(dati.ISS$IDDate[dati.ISS$date=="2022-02-28"])),RischiVacc6)
+colnames(RischiVacc6)[1]<-"IDDate"
+################Fine Febbraio 2022 MOMENTANEAMNETE uguale a Gennaio 2020
+
+################Marzo 2022 MOMENTANEAMNETE uguale a Gennaio 2020 
+#Morte: . RR calcolati rispetto a 120gg da completamento ciclo vacinale
+RischiMVacc07<-as.data.frame(matrix(c(1,1,1,5.5,11,5.5,
+                                      2,1,1,5.5,11,5.5,
+                                      3,1,1,5.5,11,5.5,
+                                      4,1,1,5.5,11,5.5,
+                                      5,1,1,5.5,8,11,
+                                      6,1,1,5.5,8,11,
+                                      7,1,1,5.1,6,17.2,
+                                      8,1,1,5.1,6,17.2,
+                                      9,1,1,4.9,5.9,17.4,
+                                      10,1,1,4.9,5.9,17.4),nrow=10,ncol=6,byrow=TRUE))
+
+colnames(RischiMVacc07)<-c("CEtaCod2","IFRM0","IFRM1","IFRM2","IFRM3","IFRM4")
+RV<-c(rep(1/564516,2),rep(1/642811,2),rep(6/284956,2),rep(47/284956,2),rep(107/102495,2))
+RNV<-c(rep(1/2423165,2),rep(4/1920673,2),rep(48/2028509,2),rep(337/806505,2),rep(760/161413,2))
+RischiMVacc07$IFRM1<-RV/RNV
+RischiMVacc07$IFRM2
+
+#Contagio: . RR calcolati rispetto a 120gg da completamento ciclo vacinale
+RischiCVacc07<-as.data.frame(matrix(c(1,1,1,1.8,1.6,2.9,
+                                      2,1,1,1.8,1.6,2.9,
+                                      3,1,1,1.8,1.6,2.9,
+                                      4,1,1,1.8,1.6,2.9,
+                                      5,1,1,1.8,1.9,3.4,
+                                      6,1,1,1.8,1.9,3.4,
+                                      7,1,1,2.1,2.6,4.9,
+                                      8,1,1,2.1,2.6,4.9,
+                                      9,1,1,3.2,2.6,4.5,
+                                      10,1,1,3.2,2.6,4.5),nrow=10,ncol=6,byrow=TRUE))
+colnames(RischiCVacc07)<-c("CEtaCod2","IFRC0","IFRC1","IFRC2","IFRC3","IFRC4")
+RV<-c(rep(8258/249529,2),rep(14389/475154,2),rep(9583/172743,2),rep(3081/172743,2),rep(888/79995,2))
+RNV<-c(rep(104470/2304415,2),rep(93323/1839637,2),rep(75788/775996,2),rep(29867/775996,2),rep(6786/149766,2))
+RischiCVacc07$IFRC1<-RV/RNV
+RischiCVacc07$IFRC2
+
+RischiVacc7<-merge(RischiMVacc07,RischiCVacc07)
+RischiVacc7<-merge(as.data.frame(unique(dati.ISS$IDDate[dati.ISS$date=="2022-03-01"]):unique(max(dati.ISS$IDDate))),RischiVacc7)
+colnames(RischiVacc7)[1]<-"IDDate"
+
+RischiVacc<-rbind(RischiVacc1,RischiVacc2,RischiVacc3,RischiVacc4,RischiVacc5,RischiVacc6,RischiVacc7)
+write.csv(RischiVacc,file="C:\\Users\\xf49652\\OneDrive - INAIL\\Pierpaolo\\COVID-19\\R\\R\\rischi.csv")
+################Fine Marzo 2022 MOMENTANEAMNETE uguale a Gennaio 2020
+
+
+###########################################################Faccio passare gradualmente i rischi da un periodo all'altro#############################################################
+colnames(Vaccini)
+colnames(RischiVacc)
+#Siccome fino a settembre il rischio vaccinati non è diviso in 2 (>120,<120), da fine guigno lo faccio arrivare fino alla media dei 2 richi calcolata a ottobre
+a1<-merge(RischiVacc2[RischiVacc2$IDDate==586,c("CEtaCod2","IFRC2","IFRM2","IFRC3","IFRM3")],Vaccini[Vaccini$IDDate==586 & Vaccini$IDReg==23,c("codeta","PV2","PV3")],by.x="CEtaCod2",by.y="codeta")
+a1$IFRC2Medio<-ifelse(a1$PV2+a1$PV3==0,1,(a1$IFRC2*a1$PV2+a1$IFRC3*a1$PV3)/(a1$PV2+a1$PV3))
+a1$IFRM2Medio<-ifelse(a1$PV2+a1$PV3==0,1,(a1$IFRM2*a1$PV2+a1$IFRM3*a1$PV3)/(a1$PV2+a1$PV3))
+
+date1 <-unique(dati.ISS$IDDate[dati.ISS$date=="2021-06-30"])
+date2a<-unique(dati.ISS$IDDate[dati.ISS$date=="2021-09-30"])
+date2 <-unique(dati.ISS$IDDate[dati.ISS$date=="2021-10-01"])
+date3 <-unique(dati.ISS$IDDate[dati.ISS$date=="2021-11-15"])
+date4 <-unique(dati.ISS$IDDate[dati.ISS$date=="2021-12-15"])
+date5 <-unique(dati.ISS$IDDate[dati.ISS$date=="2022-01-15"])
+date6 <-unique(dati.ISS$IDDate[dati.ISS$date=="2022-02-15"])
+date7 <-unique(dati.ISS$IDDate[dati.ISS$date=="2022-03-15"])
+date8 <-unique(dati.ISS$IDDate[dati.ISS$date=="2021-10-10"])
+date9 <-unique(dati.ISS$IDDate[dati.ISS$date=="2021-11-20"])
+
+
+#Rischio vaccinati-totali/non-Vaccinati lo faccio andare linearmente da giugno a 30 settembre, dove al 30/09 c'è la media dei risichi dei vaccinati in e oltre 120 gg
+for (j in date1:date2a){
+  for (i in 1:10){
+    c1<-RischiVacc$IDDate==date1
+    c2<-RischiVacc$IDDate==date2a
+    c3<-RischiVacc$CEtaCod2==i
+    int<-date2a-date1
+    RischiVacc$IFRM2[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM2[c1 & c3]+(j-date1)*(a1$IFRM2Medio[a1$CEtaCod2==i]-RischiVacc$IFRM2[c1 & c3])/int
+    RischiVacc$IFRC2[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC2[c1 & c3]+(j-date1)*(a1$IFRC2Medio[a1$CEtaCod2==i]-RischiVacc$IFRC2[c1 & c3])/int
+  }
+}
+#Rischio booster lo faccio andare linearmente da giugno (=1 perché non c'era) al 15 Nov (dve c'è prima stima del rishio) per coprire i casi prima della prima stima
+for (j in date1:date3){
+  for (i in 1:10){
+    c1<-RischiVacc$IDDate==date1
+    c2<-RischiVacc$IDDate==date3
+    c3<-RischiVacc$CEtaCod2==i
+    int<-date3-date1
+    RischiVacc$IFRM4[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM4[c1 & c3]+(j-date1)*(RischiVacc$IFRM4[c2 & c3]-RischiVacc$IFRM4[c1 & c3])/int
+    RischiVacc$IFRC4[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC4[c1 & c3]+(j-date1)*(RischiVacc$IFRC4[c2 & c3]-RischiVacc$IFRC4[c1 & c3])/int
+  }
+}
+
+for (j in date1:date2){
+  for (i in 1:10){
+    c1<-RischiVacc$IDDate==date1
+    c2<-RischiVacc$IDDate==date2
+    c3<-RischiVacc$CEtaCod2==i
+    int<-date2-date1
+    RischiVacc$IFRM1[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM1[c1 & c3]+(j-date1)*(RischiVacc$IFRM1[c2 & c3]-RischiVacc$IFRM1[c1 & c3])/int
+    RischiVacc$IFRM3[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM3[c1 & c3]+(j-date1)*(RischiVacc$IFRM3[c2 & c3]-RischiVacc$IFRM3[c1 & c3])/int
+    RischiVacc$IFRC1[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC1[c1 & c3]+(j-date1)*(RischiVacc$IFRC1[c2 & c3]-RischiVacc$IFRC1[c1 & c3])/int
+    RischiVacc$IFRC3[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC3[c1 & c3]+(j-date1)*(RischiVacc$IFRC3[c2 & c3]-RischiVacc$IFRC3[c1 & c3])/int
+  }
+}
+for (j in date2:date3){
+  for (i in 1:10){
+    c1<-RischiVacc$IDDate==date2
+    c2<-RischiVacc$IDDate==date3
+    c3<-RischiVacc$CEtaCod2==i
+    int<-date3-date2
+    RischiVacc$IFRM1[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM1[c1 & c3]+(j-date2)*(RischiVacc$IFRM1[c2 & c3]-RischiVacc$IFRM1[c1 & c3])/int
+    RischiVacc$IFRM2[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM2[c1 & c3]+(j-date2)*(RischiVacc$IFRM2[c2 & c3]-RischiVacc$IFRM2[c1 & c3])/int
+    RischiVacc$IFRM3[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM3[c1 & c3]+(j-date2)*(RischiVacc$IFRM3[c2 & c3]-RischiVacc$IFRM3[c1 & c3])/int
+    RischiVacc$IFRC1[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC1[c1 & c3]+(j-date2)*(RischiVacc$IFRC1[c2 & c3]-RischiVacc$IFRC1[c1 & c3])/int
+    RischiVacc$IFRC2[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC2[c1 & c3]+(j-date2)*(RischiVacc$IFRC2[c2 & c3]-RischiVacc$IFRC2[c1 & c3])/int
+    RischiVacc$IFRC3[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC3[c1 & c3]+(j-date2)*(RischiVacc$IFRC3[c2 & c3]-RischiVacc$IFRC3[c1 & c3])/int
+  }
+}
+for (j in date3:date4){
+  for (i in 1:10){
+    c1<-RischiVacc$IDDate==date3
+    c2<-RischiVacc$IDDate==date4
+    c3<-RischiVacc$CEtaCod2==i
+    int<-date4-date3
+    RischiVacc$IFRM1[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM1[c1 & c3]+(j-date3)*(RischiVacc$IFRM1[c2 & c3]-RischiVacc$IFRM1[c1 & c3])/int
+    RischiVacc$IFRM2[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM2[c1 & c3]+(j-date3)*(RischiVacc$IFRM2[c2 & c3]-RischiVacc$IFRM2[c1 & c3])/int
+    RischiVacc$IFRM3[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM3[c1 & c3]+(j-date3)*(RischiVacc$IFRM3[c2 & c3]-RischiVacc$IFRM3[c1 & c3])/int
+    RischiVacc$IFRM4[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM4[c1 & c3]+(j-date3)*(RischiVacc$IFRM4[c2 & c3]-RischiVacc$IFRM4[c1 & c3])/int
+    RischiVacc$IFRC1[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC1[c1 & c3]+(j-date3)*(RischiVacc$IFRC1[c2 & c3]-RischiVacc$IFRC1[c1 & c3])/int
+    RischiVacc$IFRC2[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC2[c1 & c3]+(j-date3)*(RischiVacc$IFRC2[c2 & c3]-RischiVacc$IFRC2[c1 & c3])/int
+    RischiVacc$IFRC3[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC3[c1 & c3]+(j-date3)*(RischiVacc$IFRC3[c2 & c3]-RischiVacc$IFRC3[c1 & c3])/int
+    RischiVacc$IFRC4[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC4[c1 & c3]+(j-date3)*(RischiVacc$IFRC4[c2 & c3]-RischiVacc$IFRC4[c1 & c3])/int
+  }
+}
+for (j in date4:date5){
+  for (i in 1:10){
+    c1<-RischiVacc$IDDate==date4
+    c2<-RischiVacc$IDDate==date5
+    c3<-RischiVacc$CEtaCod2==i
+    int<-date5-date4
+    RischiVacc$IFRM1[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM1[c1 & c3]+(j-date4)*(RischiVacc$IFRM1[c2 & c3]-RischiVacc$IFRM1[c1 & c3])/int
+    RischiVacc$IFRM2[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM2[c1 & c3]+(j-date4)*(RischiVacc$IFRM2[c2 & c3]-RischiVacc$IFRM2[c1 & c3])/int
+    RischiVacc$IFRM3[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM3[c1 & c3]+(j-date4)*(RischiVacc$IFRM3[c2 & c3]-RischiVacc$IFRM3[c1 & c3])/int
+    RischiVacc$IFRM4[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM4[c1 & c3]+(j-date4)*(RischiVacc$IFRM4[c2 & c3]-RischiVacc$IFRM4[c1 & c3])/int
+    RischiVacc$IFRC1[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC1[c1 & c3]+(j-date4)*(RischiVacc$IFRC1[c2 & c3]-RischiVacc$IFRC1[c1 & c3])/int
+    RischiVacc$IFRC2[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC2[c1 & c3]+(j-date4)*(RischiVacc$IFRC2[c2 & c3]-RischiVacc$IFRC2[c1 & c3])/int
+    RischiVacc$IFRC3[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC3[c1 & c3]+(j-date4)*(RischiVacc$IFRC3[c2 & c3]-RischiVacc$IFRC3[c1 & c3])/int
+    RischiVacc$IFRC4[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC4[c1 & c3]+(j-date4)*(RischiVacc$IFRC4[c2 & c3]-RischiVacc$IFRC4[c1 & c3])/int
+  }
+}
+for (j in date5:date6){
+  for (i in 1:10){
+    c1<-RischiVacc$IDDate==date5
+    c2<-RischiVacc$IDDate==date6
+    c3<-RischiVacc$CEtaCod2==i
+    int<-date6-date5
+    RischiVacc$IFRM1[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM1[c1 & c3]+(j-date5)*(RischiVacc$IFRM1[c2 & c3]-RischiVacc$IFRM1[c1 & c3])/int
+    RischiVacc$IFRM2[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM2[c1 & c3]+(j-date5)*(RischiVacc$IFRM2[c2 & c3]-RischiVacc$IFRM2[c1 & c3])/int
+    RischiVacc$IFRM3[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM3[c1 & c3]+(j-date5)*(RischiVacc$IFRM3[c2 & c3]-RischiVacc$IFRM3[c1 & c3])/int
+    RischiVacc$IFRM4[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM4[c1 & c3]+(j-date5)*(RischiVacc$IFRM4[c2 & c3]-RischiVacc$IFRM4[c1 & c3])/int
+    RischiVacc$IFRC1[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC1[c1 & c3]+(j-date5)*(RischiVacc$IFRC1[c2 & c3]-RischiVacc$IFRC1[c1 & c3])/int
+    RischiVacc$IFRC2[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC2[c1 & c3]+(j-date5)*(RischiVacc$IFRC2[c2 & c3]-RischiVacc$IFRC2[c1 & c3])/int
+    RischiVacc$IFRC3[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC3[c1 & c3]+(j-date5)*(RischiVacc$IFRC3[c2 & c3]-RischiVacc$IFRC3[c1 & c3])/int
+    RischiVacc$IFRC4[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC4[c1 & c3]+(j-date5)*(RischiVacc$IFRC4[c2 & c3]-RischiVacc$IFRC4[c1 & c3])/int
+  }
+}
+for (j in date6:date7){
+  for (i in 1:10){
+    c1<-RischiVacc$IDDate==date6
+    c2<-RischiVacc$IDDate==date7
+    c3<-RischiVacc$CEtaCod2==i
+    int<-date7-date6
+    RischiVacc$IFRM1[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM1[c1 & c3]+(j-date6)*(RischiVacc$IFRM1[c2 & c3]-RischiVacc$IFRM1[c1 & c3])/int
+    RischiVacc$IFRM2[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM2[c1 & c3]+(j-date6)*(RischiVacc$IFRM2[c2 & c3]-RischiVacc$IFRM2[c1 & c3])/int
+    RischiVacc$IFRM3[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM3[c1 & c3]+(j-date6)*(RischiVacc$IFRM3[c2 & c3]-RischiVacc$IFRM3[c1 & c3])/int
+    RischiVacc$IFRM4[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRM4[c1 & c3]+(j-date6)*(RischiVacc$IFRM4[c2 & c3]-RischiVacc$IFRM4[c1 & c3])/int
+    RischiVacc$IFRC1[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC1[c1 & c3]+(j-date6)*(RischiVacc$IFRC1[c2 & c3]-RischiVacc$IFRC1[c1 & c3])/int
+    RischiVacc$IFRC2[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC2[c1 & c3]+(j-date6)*(RischiVacc$IFRC2[c2 & c3]-RischiVacc$IFRC2[c1 & c3])/int
+    RischiVacc$IFRC3[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC3[c1 & c3]+(j-date6)*(RischiVacc$IFRC3[c2 & c3]-RischiVacc$IFRC3[c1 & c3])/int
+    RischiVacc$IFRC4[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC4[c1 & c3]+(j-date6)*(RischiVacc$IFRC4[c2 & c3]-RischiVacc$IFRC4[c1 & c3])/int
+  }
+}
+
+#Inserisco tutti i rischi dei vaccinati in dati.ISS 
+RischiVacc$RR0<-RischiVacc$IFRC0/RischiVacc$IFRM0
+RischiVacc$RR1<-RischiVacc$IFRC1/RischiVacc$IFRM1
+RischiVacc$RR2<-RischiVacc$IFRC2/RischiVacc$IFRM2
+RischiVacc$RR3<-RischiVacc$IFRC3/RischiVacc$IFRM3
+RischiVacc$RR4<-RischiVacc$IFRC4/RischiVacc$IFRM4
+
+RischiVacc$RR00<-1/RischiVacc$IFRM0
+RischiVacc$RR01<-1/RischiVacc$IFRM1
+RischiVacc$RR02<-1/RischiVacc$IFRM2
+RischiVacc$RR03<-1/RischiVacc$IFRM3
+RischiVacc$RR04<-1/RischiVacc$IFRM4
+
+#smusso curva al 01 e al 15 novembre, date in cui si cambiano i livelli di vaccini (da as o < 180gg a > o < 150gg) con le relative popolazioni
+for (j in date8:date9){
+  for (i in 1:10){
+    c1<-RischiVacc$IDDate==date8
+    c2<-RischiVacc$IDDate==date9
+    c3<-RischiVacc$CEtaCod2==i
+    int<-date9-date8
+    RischiVacc$RR1[RischiVacc$IDDate==j & c3]<-RischiVacc$RR1[c1 & c3]+(j-date8)*(RischiVacc$RR1[c2 & c3]-RischiVacc$RR1[c1 & c3])/int
+    RischiVacc$RR2[RischiVacc$IDDate==j & c3]<-RischiVacc$RR2[c1 & c3]+(j-date8)*(RischiVacc$RR2[c2 & c3]-RischiVacc$RR2[c1 & c3])/int
+    RischiVacc$RR3[RischiVacc$IDDate==j & c3]<-RischiVacc$RR3[c1 & c3]+(j-date8)*(RischiVacc$RR3[c2 & c3]-RischiVacc$RR3[c1 & c3])/int
+    RischiVacc$RR4[RischiVacc$IDDate==j & c3]<-RischiVacc$RR4[c1 & c3]+(j-date8)*(RischiVacc$RR4[c2 & c3]-RischiVacc$RR4[c1 & c3])/int
+    RischiVacc$RR01[RischiVacc$IDDate==j & c3]<-RischiVacc$RR01[c1 & c3]+(j-date8)*(RischiVacc$RR01[c2 & c3]-RischiVacc$RR01[c1 & c3])/int
+    RischiVacc$RR02[RischiVacc$IDDate==j & c3]<-RischiVacc$RR02[c1 & c3]+(j-date8)*(RischiVacc$RR02[c2 & c3]-RischiVacc$RR02[c1 & c3])/int
+    RischiVacc$RR03[RischiVacc$IDDate==j & c3]<-RischiVacc$RR03[c1 & c3]+(j-date8)*(RischiVacc$RR03[c2 & c3]-RischiVacc$RR03[c1 & c3])/int
+    RischiVacc$RR04[RischiVacc$IDDate==j & c3]<-RischiVacc$RR04[c1 & c3]+(j-date8)*(RischiVacc$RR04[c2 & c3]-RischiVacc$RR04[c1 & c3])/int
+  }
+}
