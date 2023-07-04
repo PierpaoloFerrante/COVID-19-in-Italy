@@ -1,5 +1,3 @@
-#rm(list=ls())
-
 library(readxl)
 library(spatstat)
 #####################################################coding tables#####################################################
@@ -191,7 +189,7 @@ EtaMed$date[EtaMed$dateMed<"2020-06-01"]<-EtaMed$dateMed[EtaMed$dateMed<"2020-06
 EtaMed$date[EtaMed$dateMed>"2020-05-30" & EtaMed$dateMed<"2020-10-01"]<-EtaMed$dateMed[EtaMed$dateMed>"2020-05-30" & EtaMed$dateMed<"2020-10-01"]-9+7
 EtaMed$date[EtaMed$dateMed>"2020-09-30" & EtaMed$dateMed<"2021-03-01"]<-EtaMed$dateMed[EtaMed$dateMed>"2020-09-30" & EtaMed$dateMed<"2021-03-01"]-8+7
 EtaMed$date[EtaMed$dateMed>"2021-02-28"]<-EtaMed$dateMed[EtaMed$dateMed>"2021-02-28"]-6+7
-#Nei 4 punti sopra il salto tra una nuova data e l'altra non è 7
+#Nei 4 punti sopra il salto tra una nuova data e l'altra non Ã¨ 7
 EtaMed$lagmed<-0
 for (j in 1:(nrow(EtaMed)-1)){
   EtaMed$lagmed[j]<-as.numeric(EtaMed$date[j+1]-EtaMed$date[j])
@@ -441,12 +439,12 @@ Fine<-max(Covid19all$date1)
   colnames(Pop1)[9]<-"etamedp"
   Pop1$chiave = 1:nrow(Pop1)
 
-  #estraggo i valori età 0 e età 100 e creo due tabelle 
+  #estraggo i valori etÃ  0 e etÃ  100 e creo due tabelle 
   tabella_eta_0 = Pop1[Pop1$Eta==0,c("anno","Pop")]
   names(tabella_eta_0)[2] = "popolazione_0"
   tabella_eta_100 = Pop1[Pop1$Eta==100,c("anno","Pop")]
   names(tabella_eta_100)[2] = "popolazione_100"
-  #faccio la join con la tabella popolazione per dare assegnare ad ogni elemento il corrispondente "popolazione con età 0" e "popolazione con età 100"
+  #faccio la join con la tabella popolazione per dare assegnare ad ogni elemento il corrispondente "popolazione con etÃ  0" e "popolazione con etÃ  100"
   righe = nrow(Pop1)
   Pop1 = merge(x = Pop1, y = tabella_eta_0, by.x = "anno", by.y = "anno",all.x = TRUE)
   Pop1 = merge(x = Pop1, y = tabella_eta_100, by.x = "anno", by.y = "anno",all.x = TRUE)
@@ -454,9 +452,9 @@ Fine<-max(Covid19all$date1)
   if (nrow(Pop1)==righe&all(!is.na(Pop1$popolazione_0))&all(!is.na(Pop1$popolazione_100))) {
     rm(righe,tabella_eta_0,tabella_eta_100)
   } else {
-    warning('Errore nella join: non è stata fatta 1:1. Controllare.')
+    warning('Errore nella join: non Ã¨ stata fatta 1:1. Controllare.')
   }
-  #creo le colonne a e b e rimuovo le colonne aggiunte, non più necessarie
+  #creo le colonne a e b e rimuovo le colonne aggiunte, non piÃ¹ necessarie
   Pop1$a = Pop1$Pop/Pop1$popolazione_0
   Pop1$b = Pop1$Pop/Pop1$popolazione_100
   Pop1 = Pop1[!names(Pop1) %in% c("popolazione_0","popolazione_100")]
@@ -593,13 +591,13 @@ Fine<-max(Covid19all$date1)
     Covid19all$IFRAtt<-Covid19all$IFRPop/Covid19all$Pop
 
     #####################################################Correted IFRMed by ISTAT serosurveys results##############################################
-    #numerosità stimata da indagine sierologica ISTAT (25/Maggio-15/Luglio/2020)
+    #numerositÃ  stimata da indagine sierologica ISTAT (25/Maggio-15/Luglio/2020)
     NISTAT<-NISTAT[NISTAT$codreg==23,-2]
     Covid19all<-merge(Covid19all,NISTAT)
     Covid19all$IFRISTAT<-Covid19all$IFRMed*sum(Covid19all$dWMA[Covid19all$date1<118]/Covid19all$IFRMed[Covid19all$date1<118])/NISTAT$NISTAT
     Covid19all$NISTAT<-NULL
 
-  #####################################################Importo Dati ISS: casi x età e sesso##################################################################
+  #####################################################Importo Dati ISS: casi x etÃ  e sesso##################################################################
   fileNames <- dir(your_data_folder)
   dati.ISS <- NULL
   for(i in 1:495) {
@@ -628,7 +626,7 @@ Fine<-max(Covid19all$date1)
   v<-aggregate(dati.ISS$IDDate,list(dati.ISS$CASI_CUMULATIVI,dati.ISS$CodSESSO,dati.ISS$CEtaCod2),min)
   colnames(v)<-c("n","CodSESSO","CEtaCod2","IDDate")
 
-  #Riordino le date dei decessi x sesso ed età
+  #Riordino le date dei decessi x sesso ed etÃ 
   for (j in 1:10){
     for (i in 1:2){
       varappoggio<-z[z$CodSESSO==i & z$CEtaCod2==j,]
@@ -638,7 +636,7 @@ Fine<-max(Covid19all$date1)
   }
   z[z$IDDated!=z$IDDate,]
   
-  #Riordino le date dei casi positivi x sesso ed atà
+  #Riordino le date dei casi positivi x sesso ed atÃ 
   for (j in 1:10){
     for (i in 1:2){
       varappoggio<-v[v$CodSESSO==i & v$CEtaCod2==j,]
@@ -1079,7 +1077,7 @@ Fine<-max(Covid19all$date1)
     
     
     ###########################################################smoothing risks from one estimation point to the next one#############################################################
-    #Siccome fino a settembre il rischio vaccinati non è diviso in 2 (>120,<120), da fine guigno lo faccio arrivare fino alla media dei 2 richi calcolata a ottobre
+    #Siccome fino a settembre il rischio vaccinati non Ã¨ diviso in 2 (>120,<120), da fine guigno lo faccio arrivare fino alla media dei 2 richi calcolata a ottobre
     a1<-merge(RischiVacc[RischiVacc$IDDate==586,c("CEtaCod2","IFRC2","IFRM2","IFRC3","IFRM3")],Vaccini[Vaccini$IDDate==586,c("CEtaCod2","PV2","PV3")],by.x="CEtaCod2",by.y="CEtaCod2")
     a1$IFRC2Medio<-ifelse(a1$PV2+a1$PV3==0,1,(a1$IFRC2*a1$PV2+a1$IFRC3*a1$PV3)/(a1$PV2+a1$PV3))
     a1$IFRM2Medio<-ifelse(a1$PV2+a1$PV3==0,1,(a1$IFRM2*a1$PV2+a1$IFRM3*a1$PV3)/(a1$PV2+a1$PV3))
@@ -1095,7 +1093,7 @@ Fine<-max(Covid19all$date1)
     date8 <-unique(dati.ISS$IDDate[dati.ISS$date=="2021-10-10"])
     date9 <-unique(dati.ISS$IDDate[dati.ISS$date=="2021-11-20"])
     
-    #Risk vaccinati-totali/non-Vaccinati goes linearly from June to 30 settembre, dove al 30/09 c'è la media dei risichi dei vaccinati in e oltre 120 gg
+    #Risk vaccinati-totali/non-Vaccinati goes linearly from June to 30 settembre, dove al 30/09 c'Ã¨ la media dei risichi dei vaccinati in e oltre 120 gg
     for (j in date1:date2a){
       for (i in 1:10){
         c1<-RischiVacc$IDDate==date1
@@ -1106,7 +1104,7 @@ Fine<-max(Covid19all$date1)
         RischiVacc$IFRC2[RischiVacc$IDDate==j & c3]<-RischiVacc$IFRC2[c1 & c3]+(j-date1)*(a1$IFRC2Medio[a1$CEtaCod2==i]-RischiVacc$IFRC2[c1 & c3])/int
       }
     }
-    #Rischio booster lo faccio andare linearmente da giugno (=1 perché non c'era) al 15 Nov (dve c'è prima stima del rishio) per coprire i casi prima della prima stima
+    #Rischio booster lo faccio andare linearmente da giugno (=1 perchÃ© non c'era) al 15 Nov (dve c'Ã¨ prima stima del rishio) per coprire i casi prima della prima stima
     for (j in date1:date3){
       for (i in 1:10){
         c1<-RischiVacc$IDDate==date1
@@ -1351,7 +1349,7 @@ Fine<-max(Covid19all$date1)
     Stime$NMed<-Stime$dWMA/Stime$IFRMed
     
 
-    ##############Put FRISTS for the first period (to day 120°, i.e. 21/06/2020), then gradually (for 15 days) to IFR from  fictitious population (IFRMed), then IFRmed to day 289 (last 30 days learly to estimation from dati.ISS)#######################################
+    ##############Put FRISTS for the first period (to day 120Â°, i.e. 21/06/2020), then gradually (for 15 days) to IFR from  fictitious population (IFRMed), then IFRmed to day 289 (last 30 days learly to estimation from dati.ISS)#######################################
     Stime$IFR0<-Stime$IFRMed
     Stime$IFR0[Stime$date1<120]<-Stime$IFRISTAT[Stime$date1<120]
     
