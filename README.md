@@ -22,3 +22,4 @@ https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full
 
 
 # Usage
+In the "main.R" file change the path your_data_folder<-"C:\\your\\local\\folder\\"
