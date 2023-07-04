@@ -1,0 +1,7 @@
+#download needed files (1=Pop, 2-4=Vaccines, 5=Covid-19)
+download.file("http://sdmx.istat.it/SDMXWS/rest/data/22_289/..IT.9.99../?startPeriod=2020",destfile = paste(your_data_folder,"regioni.csv",sep=""), method = "curl", extra = "-kL -H \"Accept: application/vnd.sdmx.data+csv;version=1.0.0\"")
+#1.1 system('curl -kL -H "Accept: application/vnd.sdmx.data+csv;version=1.0.0" "http://sdmx.istat.it/SDMXWS/rest/data/22_289/..IT.9.99../?startPeriod=2020" -o paste(your_data_folder,"regioni.csv",sep="")')
+download.file("https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/dati/somministrazioni-vaccini-latest-2020.csv",destfile = paste(your_data_folder,"Vaccini2020.csv",sep=""))
+download.file("https://raw.githubusercontent.com//italia//covid19-opendata-vaccini//master//dati//somministrazioni-vaccini-latest-2021.csv",destfile = paste(your_data_folder,"Vaccini2021.csv",sep=""))
+download.file("https://raw.githubusercontent.com//italia//covid19-opendata-vaccini//master//dati//somministrazioni-vaccini-latest-2022.csv",destfile = paste(your_data_folder,"Vaccini2022.csv",sep=""))
+download.file("https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv", destfile = paste(your_data_folder,"dpc-covid19-ita-regioni.csv",sep=""), method = "auto")
