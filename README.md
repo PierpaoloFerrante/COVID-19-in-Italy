@@ -17,12 +17,12 @@ https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full
 
 \
 ***Statistical analysis*** 
-- The "main.r" file contains the R code which analyzes the data and proides estimates of incidenced and lethality as well as the evaluation of helth policies
+- The "main.r" file contains the R code to import data COVID-19 data and make the analyzes to proide estimates of incidence and lethality as well as the evaluation of helth policies
 - The folder "plots" contains 3 .r files to make respectively incidence lethality and deaths plots. The incidence and death plots includes the vaccine campaign impact 
 
 
 # Usage
 - Download all the data from the folder data/files
-- The  "main.R" file import data in R and make the statistical analysis.
+- The  "main.R" fileand make the statistical analysis.
 - Before running  "main.R" file change in line 152 the path in the variable "your_data_folder" from "C:\\your\\local\\folder\\" to your local folder containing the data downoaded before.
 - Run files in the folder plot to make incidence, lethality and death curves
