@@ -22,4 +22,7 @@ https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full
 
 
 # Usage
-In the "main.R" file change the path your_data_folder<-"C:\\your\\local\\folder\\"
+- Download all the data from the folder data/files
+- The  "main.R" file import data in R and make the statistical analysis.
+- Before running  "main.R" file change in line 152 the path in the variable "your_data_folder" from "C:\\your\\local\\folder\\" to your local folder containing the data downoaded before.
+- Run files in the folder plot to make incidence, lethality and death curves
