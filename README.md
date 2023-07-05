@@ -11,16 +11,16 @@ To estimate daily incidence cases based on the number of daily deaths and virus 
 # Content
 
 ***Data***
-- The input data are stored in the folder "DATA\Files", which contains daily condirmed cases, deaths, vaccine coverage of population and variants prevalence as well as estimated relative risks vanninated/unvaccinated of take the infection or die for it. 
+- The input data are stored in the folder "DATA\Files", which contains daily condirmed cases, deaths, vaccine coverage of the population, prevalence of variants, as well as estimated relative risks of acquiring the infection or dying from it for vanninated Vs unvaccinated individuals. 
 
 \
 ***Statistical analysis*** 
-- The "main.r" file contains the R code to import data COVID-19 data and makes the analyzes to proide estimates of incidence and lethality as well as the evaluation of helth policies
-- The folder "plots" contains 3 .r files to make respectively incidence lethality and deaths plots. The incidence and death plots includes the vaccine campaign impact 
+- The "main.r" file contains the R code to import COVID-19 data and perform  analyzes to estimate incidence, lethality and evaluate helth policies.
+- The folder "plots" contains three R files to generate  incidence lethality, and deaths plots. The incidence and death plots include the impact of the vaccine campaign. 
 
 
 # Usage
-- Download all the data from the folder data/files
-- The  "main.R" file makes the statistical analysis.
-- Before running  "main.R" file change in line 152 the path in the variable "your_data_folder" from "C:\\your\\local\\folder\\" to your local folder containing the data downoaded before.
-- Run files in the folder plot to make incidence, lethality and death curves
+- Download all the data from the "data/files" folder.
+- The "main.R" file performs the statistical analysis.
+- Before running the "main.R" file, modify line 152 by changing the path in the variable "your_data_folder" from "C:\\your\\local\\folder\\" to the path of your local folder containing the downloaded data.
+- Run the files in the "plot" folder to generate incidence, lethality and death curves.
