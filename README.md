@@ -11,7 +11,7 @@ To estimate daily incidence cases based on the number of daily deaths and virus 
 # Content
 
 ***Data***
-- The input data are stored in the folder "DATA\Files", which contains daily condirmed and deaths cases, vaccine coverage of the population, prevalence of variants, lethality od original streinght as well as estimated relative risks of acquiring the infection or dying from it for vanninated Vs unvaccinated individuals. 
+- The input data are stored in the folder "DATA\Files", which contains daily condirmed and deaths cases, vaccine coverage of the population, prevalence of variants, lethality of the original strain as well as estimated relative risks of acquiring the infection or dying from it for vanninated Vs unvaccinated individuals. 
 
 \
 ***Statistical analysis*** 
