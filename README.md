@@ -20,7 +20,7 @@ To estimate daily incidence cases based on the number of daily deaths and virus 
 
 
 # Usage
-- Download all the data from the "data/files" folder.
-- The "main.R" file performs the statistical analysis.
-- Before running the "main.R" file, modify line 152 by changing the path in the variable "your_data_folder" from "C:\\your\\local\\folder\\" to the path of your local folder containing the downloaded data.
+- Download all the data from the "data/files" folder to your local directory.
+- Open the "main.R" file and modify line 152 by changing the path in the variable "your_data_folder" from "C:\\your\\local\\folder\\" to the path of your local folder containing the downloaded data.
+- Run the corrected "main.R" file to perform the statistical analysis.
 - Run the files in the "plot" folder to generate incidence, lethality and death curves.
