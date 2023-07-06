@@ -437,4 +437,4 @@ TabDec$meas<-c("School closed","Stop mobility","Industrial lockdown","intraregio
                "back to working in presence","extension of mandatory vaccination and of green pass","mandatory ffp2 on public transport","school opening")
 Tab2<-cbind(TabInc,TabDec[,-3])
 Tab2
-################################################################## Fine Tab rappIncr Incidenza############################################################################
+write.csv(Tab2,file=paste(your_data_folder,"Tab2.csv",sep=""))
