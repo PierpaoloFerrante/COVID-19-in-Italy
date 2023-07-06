@@ -149,7 +149,7 @@ rm(list=c("facd1","facd2","facn1","facn2","facn3","facn4","i","IQRd1","IQRd2","I
 
 #####################################################Data Import############################################################################
 #local paths to needed datafiles
-your_data_folder<-"C:\\your\\data\\path\\"
+your_data_folder<-"C:\\your\\local\\folder\\"
 
 # Import ISTAT Italian Population 2020-2023 (you can do it directly with the system function)
 Pop <- read.csv(paste(your_data_folder,"regioni.csv",sep=""))
