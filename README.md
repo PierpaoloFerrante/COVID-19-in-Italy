@@ -17,7 +17,7 @@ For more details on the model, refer to the [published article](https://www.fron
 
 \
 ***Statistical analysis*** 
-- The "main.r" file contains the R code to import COVID-19 data and perform  analyzes to estimate incidence, lethality and evaluate helth policies.
+- The "main.r" file contains the R code to read COVID-19 data and perform analyzes to estimate incidence, lethality and evaluate helth policies.
 - The folder "plot" contains three R files to generate  incidence lethality, and deaths plots. The incidence and death plots include the impact of the vaccine campaign. 
 
 
