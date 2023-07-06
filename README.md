@@ -24,7 +24,7 @@ For more details on the model, refer to the [published article](https://www.fron
 
 
 # Usage
-- Download all the .xlsx and .csv files from the "data/files" folder to your local directory.
+- Download all the .xlsx and .csv files from the "Data/Files" folder to your local directory.
 - Open the "main.R" file and modify line 152 by changing the path in the variable "your_data_folder" from "C:\\your\\local\\folder\\" to the path of your local folder containing the downloaded data.
 - Run the corrected "main.R" file to perform the statistical analysis.
 - Run the files in the "Plots" folder to generate incidence, lethality and death curves.
