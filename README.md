@@ -4,8 +4,8 @@ This project aims to provide access to and analyze Italian institutional data on
 
 The used data are freely available and collected by the COVID-19 surveillance system, which is managed by the [Italian Health Institute](https://www.iss.it/)  (ISS). The [Civil Protection](https://emergenze.protezionecivile.gov.it/it/) daily publishes regional data [here](https://github.com/pcm-dpc/COVID-19), while the ISS maintains, checks, corrects and updates regional records on COVID-19 infections in a national register as described [here](https://www.epicentro.iss.it/coronavirus/sars-cov-2-sorveglianza).
 
-To estimate daily incidence cases based on the number of daily deaths and virus lethality, a negative binomial model was developed. For more details on the model, refer to the [published article](https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full).
-
+A negative binomial model was developed to estimate daily incidence cases based on the number of daily deaths and virus lethality. The lethality of the orginal strain is updated daily, incorporating hazards ratios of virus variants weighted by their prevalences and the relative risks of vaccinated individuals versus unvaccinated individuals weigheted by population's vaccine coverage.  
+For more details on the model, refer to the [published article](https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full).
 
 
 # Content
