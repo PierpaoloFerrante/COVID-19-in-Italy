@@ -34,6 +34,6 @@ For more details on the model, refer to the [published article](https://www.fron
 
 # References
 1. [The first 2 years of COVID-19 in Italy: Incidence, lethality, and health policies](https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full).
-2. [The first year of COVID-19 in Italy: Incidence, lethality, and health policies]([https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full](https://journals.sagepub.com/doi/10.4081/jphr.2021.2201)).
+2. [The first year of COVID-19 in Italy: Incidence, lethality, and health policies](https://journals.sagepub.com/doi/10.4081/jphr.2021.2201).
 3.[Research topic: lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics](https://www.frontiersin.org/research-topics/42790/lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics)
 
