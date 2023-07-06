@@ -422,7 +422,7 @@ Fine<-max(Covid19all$date1)
   Covid19all$testWMA[Covid19all$date1>bound3 & Covid19all$date1<=Fine-2*mun4]<-MAT4
   length(Covid19all$testWMA[Covid19all$date1>bound3 & Covid19all$date1<=Fine-2*mun4])
 
-  rm(list=c("bound1","bound2","bound3","Fine","Inizio","MAD1","MAD1","MAD2","MAN1","MAN2","MAN3","MAN4","MAT1","MAT2","MAT3","MAT4"))
+  rm(list=c("bound1","bound2","bound3","Fine","Inizio","MAD1","MAD2","MAN1","MAN2","MAN3","MAN4","MAT1","MAT2","MAT3","MAT4"))
   
   
   ##################################################### Fictitious population ####################################################
