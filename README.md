@@ -27,4 +27,13 @@ For more details on the model, refer to the [published article](https://www.fron
 - Download all the .xlsx and .csv files from the "data/files" folder to your local directory.
 - Open the "main.R" file and modify line 152 by changing the path in the variable "your_data_folder" from "C:\\your\\local\\folder\\" to the path of your local folder containing the downloaded data.
 - Run the corrected "main.R" file to perform the statistical analysis.
-- Run the files in the "plot" folder to generate incidence, lethality and death curves.
+- Run the files in the "Plots" folder to generate incidence, lethality and death curves.
+- Run the files in the "Tables" folder to generate tables of incidences by waves and variants and of policies evaluation.
+
+
+
+# References
+1. [The first 2 years of COVID-19 in Italy: Incidence, lethality, and health policies](https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full).
+2. [The first year of COVID-19 in Italy: Incidence, lethality, and health policies]([https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full](https://journals.sagepub.com/doi/10.4081/jphr.2021.2201)).
+3.[Research topic: lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics](https://www.frontiersin.org/research-topics/42790/lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics)
+
