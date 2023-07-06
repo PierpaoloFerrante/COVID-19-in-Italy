@@ -1,4 +1,4 @@
-
+Stime1<-Stime
 ################################################################## Tab rappIncr Incidenza############################################################################
 #rapporto incrementale prima-dopo chiusura scuole 05 Marzo (11)
 m11<-(Stime1$NVarVacc1[Stime1$date1==11]-Stime1$NVarVacc1[Stime1$date1==4])/7
