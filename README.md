@@ -1,6 +1,6 @@
 # Epidemiology of COVID-19 in Italy, 2020-2022
 
-This project aims to provide access to and analyze Italian institutional data on COVID-19. 
+This project aims to provide access to and analyze Italian institutional public data on COVID-19. 
 
 The used data are freely available and collected by the COVID-19 surveillance system, which is managed by the [Italian Health Institute](https://www.iss.it/)  (ISS). The [Civil Protection](https://emergenze.protezionecivile.gov.it/it/) daily publishes regional data [here](https://github.com/pcm-dpc/COVID-19), while the ISS maintains, checks, corrects and updates regional records on COVID-19 infections in a national register as described [here](https://www.epicentro.iss.it/coronavirus/sars-cov-2-sorveglianza).
 
