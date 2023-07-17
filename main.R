@@ -296,7 +296,7 @@ sum(Covid19all$dPC[(Covid19all$region=="P.A. Trento" | Covid19all$region=="TA") 
 
 #azzero i -61 morti del 24/06/2020
 Covid19all$dPC[(Covid19all$region=="P.A. Trento" | Covid19all$region=="TA") & Covid19all$IDDate==122]<-0
-###############################Finestorno -61 decessi per P.A. Trento del 24/06/2020###############################
+
 
 ############################################COVID-19 data: From regional to National data########################################################
 #sum with respect to regions
@@ -320,7 +320,6 @@ for (i in 1:6)
 rm(list=c("i"))
 Covid19all$date1[Covid19all$date=="2022-04-15"]
 
-###########################################Fine aggiungo il totale=Italia dopo correzioni########################################################
 #import ISS deaths (detected on 2022/04/15)
 #DIDD<-openxlsx::read.xlsx("https://github.com/floatingpurr/covid-19_sorveglianza_integrata_italia/raw/main/data/2022-04-15/data.xlsx", sheet = "decessi")
 DIDD<-openxlsx::read.xlsx(paste(your_data_folder,"2022-04-15.xlsx",sep=""),sheet = "decessi")
@@ -515,7 +514,7 @@ Fine<-max(Covid19all$date1)
   Covid19all<-Covid19all[order(Covid19all$date),]
 
     
-  #####################################inserisco IFRMed infrasettimanali tamite relazione lineare######################################################
+  #####################################Add midweek IFRMed by a linear relationship######################################################
   a<-PopIFRMed[PopIFRMed$etamedc==64 & PopIFRMed$anno==2020,]
   Covid19all<-Covid19all[order(Covid19all$date1),]
   Covid19all[Covid19all$date1==1,c("etamediana","IFRMed")]<-a[,c("etamedc","IFRMed")]
@@ -589,7 +588,7 @@ Fine<-max(Covid19all$date1)
     Covid19all$IFRISTAT<-Covid19all$IFRMed*sum(Covid19all$dWMA[Covid19all$date1<118]/Covid19all$IFRMed[Covid19all$date1<118])/NISTAT$NISTAT
     Covid19all$NISTAT<-NULL
 
-  #####################################################Importo Dati ISS: casi x età e sesso##################################################################
+  #####################################################Import ISS Data: infections by age##################################################################
   fileNames <- dir(your_data_folder)
   dati.ISS <- NULL
   for(i in 1:495) {
