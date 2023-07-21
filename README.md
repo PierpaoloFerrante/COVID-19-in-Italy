@@ -25,7 +25,7 @@ For more details on the model, refer to the [published article](https://www.fron
 
 # Usage
 - Download all the .xlsx and .csv files from the "Data/Files" folder to your local directory.
-- Open the "main.R" file and modify line 152 by changing the path in the variable "your_data_folder" from "C:\\\your\\\local\\\folder\\\\" to the path of your local folder containing the downloaded data.
+- Open the "main.R" file and modify the line 152 by changing the path in the variable "your_data_folder" from "C:\\\your\\\local\\\folder\\\\" to the path of your local folder containing the downloaded data.
 - Run the corrected "main.R" file to perform the statistical analysis.
 - Run the files in the "Plots" folder to generate incidence, lethality and death curves.
 - Run the files in the "Tables" folder to generate tables of incidences by waves and variants and of policies evaluation.
