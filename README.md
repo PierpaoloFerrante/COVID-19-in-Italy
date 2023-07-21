@@ -22,6 +22,13 @@ For more details on the model, refer to the [published article](https://www.fron
 - The folder "Tables" contains two R files to generate the waves table (tab1) and the plocies evaluation table (tab2)
 
 
+\
+***Publications*** 
+The folder "Plots" contains published material related to this project:
+- Paper2.pdf is a paper anylizing the first 2 years of COVI-19 in Italy and included in the research tipic [1]
+- Paper1.pdf is a paper anylizing the first year of COVI-19 in Italy and introducing the negative binomial model
+- FactSheet1.pdf is a fact sheet resuming the project results
+
 
 # Usage
 - Download all the .xlsx and .csv files from the "Data/Files" folder to your local directory.
