@@ -19,16 +19,16 @@ For more details on the model, refer to the [published article](https://www.fron
 ***Statistical analysis*** 
 - The "main.r" file contains the R code to read COVID-19 data and perform analyzes to estimate incidence, lethality and evaluate helth policies.
 - The folder "Plots" contains three R files to generate  incidence lethality, and deaths plots. The incidence and death plots include the impact of the vaccine campaign.
-- The folder "Tables" contains two R files to generate the waves table (tab1) and the plocies evaluation table (tab2)
+- The folder "Tables" contains two R files to generate the waves table (tab1) and the plocies evaluation table (tab2).
 
 
 \
 ***Publications*** 
 
 The folder "Publications" contains the main published material:
-- Paper2.pdf is a paper anyalizing the first 2 years of COVI-19 in Italy and included in the research tipic [1]
-- Paper1.pdf is a paper anyalizing the first year of COVI-19 in Italy and introducing the negative binomial model
-- FactSheet1.pdf is a fact sheet resuming the project results
+- Paper2.pdf is a paper anyalizing the first 2 years of COVI-19 in Italy and included in the research tipic [1].
+- Paper1.pdf is a paper anyalizing the first year of COVI-19 in Italy and introducing the negative binomial model.
+- FactSheet1.pdf is a fact sheet resuming the project results.
 
 
 # Usage
