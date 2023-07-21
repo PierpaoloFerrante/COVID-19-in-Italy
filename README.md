@@ -38,5 +38,5 @@ For more details on the model, refer to the [published article](https://www.fron
    
 3. Paper: [The first year of COVID-19 in Italy: Incidence, lethality, and health policies](https://journals.sagepub.com/doi/10.4081/jphr.2021.2201).
   
-4. Factsheet: [Covid 19: modellazione matematica in public health] (https://redazionelive.inail.it/cs/internet/comunicazione/pubblicazioni/catalogo-generale/pubbl-covid19-modellazione-matematica-public-health.html)
+4. Factsheet: [Covid 19: modellazione matematica in public health](https://redazionelive.inail.it/cs/internet/comunicazione/pubblicazioni/catalogo-generale/pubbl-covid19-modellazione-matematica-public-health.html)
 
