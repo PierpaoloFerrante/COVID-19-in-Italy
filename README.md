@@ -26,8 +26,8 @@ For more details on the model, refer to the [published article](https://www.fron
 ***Publications*** 
 
 The folder "Publications" contains the main published material:
-- Paper2.pdf is a paper included in the research tipic [1], anyalizing the first 2 years of COVI-19 in Italy.
-- Paper1.pdf is a paper anyalizing the first year of COVI-19 in Italy and introducing the negative binomial model.
+- Paper2.pdf is the paper [2] included in the research tipic [1], anyalizing the first 2 years of COVI-19 in Italy.
+- Paper1.pdf is the paper [1] anyalizing the first year of COVI-19 in Italy and introducing the negative binomial model.
 - FactSheet1.pdf is a fact sheet resuming the project results.
 
 
