@@ -44,7 +44,7 @@ The folder "Publications" contains the published material in references:
 # References
 1. Research topic: [lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics](https://www.frontiersin.org/research-topics/42790/lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics).
 
-2. Editorial: [Reccomendations](https://www.frontiersin.org/articles/10.3389/fpubh.2023.1281493/full)
+2. Editorial: [Reccomendations based on research topic results](https://www.frontiersin.org/articles/10.3389/fpubh.2023.1281493/full)
 
 3. Paper: [The first 2 years of COVID-19 in Italy: Incidence, lethality, and health policies](https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full).
    
