@@ -26,7 +26,7 @@ For more details on the model, refer to the [published article](https://www.fron
 ***Publications*** 
 
 The folder "Publications" contains the published material in references:
-- Editorial2023.pdf is the paper [2] included in the research topic [1], anyalizing the first 2 years of COVI-19 in Italy.
+- Editorial2023.pdf is the paper [2] provides reccomentations based on research topic papers results.
 - Paper2.pdf is the paper [3] included in the research topic [1], anyalizing the first 2 years of COVI-19 in Italy.
 - Paper1.pdf is the paper [4] anyalizing the first year of COVI-19 in Italy and introducing the basis for negative binomial model.
 - FactSheet1.pdf is the fact sheet [5] resuming the project results.
@@ -43,7 +43,9 @@ The folder "Publications" contains the published material in references:
 
 # References
 1. Research topic: [lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics](https://www.frontiersin.org/research-topics/42790/lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics).
-2. Editorial: [](https://www.frontiersin.org/articles/10.3389/fpubh.2023.1281493/full)
+
+2. Editorial: [Reccomendations](https://www.frontiersin.org/articles/10.3389/fpubh.2023.1281493/full)
+
 3. Paper: [The first 2 years of COVID-19 in Italy: Incidence, lethality, and health policies](https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full).
    
 4. Paper: [The first year of COVID-19 in Italy: Incidence, lethality, and health policies](https://journals.sagepub.com/doi/10.4081/jphr.2021.2201).
