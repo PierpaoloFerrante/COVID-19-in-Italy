@@ -26,7 +26,7 @@ For more details on the model, refer to the [published article](https://www.fron
 ***Publications*** 
 
 The folder "Publications" contains the published material in references:
-- Editorial2023.pdf is the paper [2] provides reccomentations based on research topic papers results.
+- Editorial2023.pdf is the paper [2] providing reccomentations based on research topic papers results.
 - Paper2.pdf is the paper [3] included in the research topic [1], anyalizing the first 2 years of COVI-19 in Italy.
 - Paper1.pdf is the paper [4] anyalizing the first year of COVI-19 in Italy and introducing the basis for negative binomial model.
 - FactSheet1.pdf is the fact sheet [5] resuming the project results.
