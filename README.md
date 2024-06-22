@@ -28,7 +28,7 @@ For more details on the model, refer to the [published article](https://www.fron
 ***Publications*** 
 
 The folder "Publications" contains the published material in references:
-- HospitalizationCosts.pdf is the paper [1] providing reccomentations based on research topic papers results.
+- HospitalizationCosts.pdf is the paper [1] providing costs estimates of 2020-2021 COVID-19 hospitalizations.
 - Editorial2023.pdf is the paper [3] providing reccomentations based on papers results of research topic [2].
 - NegBinModel.pdf is the paper [4] included in the research topic [2], anyalizing the first 2 years of COVI-19 in Italy.
 - BaseModel.pdf is the paper [5] anyalizing the first year of COVI-19 in Italy and introducing the basis for negative binomial model.
