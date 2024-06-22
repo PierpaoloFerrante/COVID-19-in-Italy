@@ -28,10 +28,11 @@ For more details on the model, refer to the [published article](https://www.fron
 ***Publications*** 
 
 The folder "Publications" contains the published material in references:
+- HospitalizationCosts.pdf is the paper [1] providing reccomentations based on research topic papers results.
 - Editorial2023.pdf is the paper [2] providing reccomentations based on research topic papers results.
-- Paper2.pdf is the paper [3] included in the research topic [1], anyalizing the first 2 years of COVI-19 in Italy.
-- Paper1.pdf is the paper [4] anyalizing the first year of COVI-19 in Italy and introducing the basis for negative binomial model.
-- FactSheet1.pdf is the fact sheet [5] resuming the project results.
+- NegBinModel.pdf is the paper [3] included in the research topic [1], anyalizing the first 2 years of COVI-19 in Italy.
+- BaseModel.pdf is the paper [4] anyalizing the first year of COVI-19 in Italy and introducing the basis for negative binomial model.
+- ModelValidation.pdf is the fact sheet [5] resuming the project results and comparing them with those obtained by the ISS.
 
 
 # Usage
@@ -46,11 +47,13 @@ The folder "Publications" contains the published material in references:
 # References
 1. Research topic: [lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics](https://www.frontiersin.org/research-topics/42790/lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics).
 
-2. Editorial: [Reccomendations based on research topic results](https://www.frontiersin.org/articles/10.3389/fpubh.2023.1281493/full)
+2. Research topic: [lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics](https://www.frontiersin.org/research-topics/42790/lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics).
 
-3. Paper: [The first 2 years of COVID-19 in Italy: Incidence, lethality, and health policies](https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full).
+3. Editorial: [Reccomendations based on research topic results](https://www.frontiersin.org/articles/10.3389/fpubh.2023.1281493/full)
+
+4. Paper: [The first 2 years of COVID-19 in Italy: Incidence, lethality, and health policies](https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full).
    
-4. Paper: [The first year of COVID-19 in Italy: Incidence, lethality, and health policies](https://journals.sagepub.com/doi/10.4081/jphr.2021.2201).
+5. Paper: [The first year of COVID-19 in Italy: Incidence, lethality, and health policies](https://journals.sagepub.com/doi/10.4081/jphr.2021.2201).
   
-5. Factsheet: [Covid 19: modellazione matematica in public health](https://redazionelive.inail.it/cs/internet/comunicazione/pubblicazioni/catalogo-generale/pubbl-covid19-modellazione-matematica-public-health.html).
+6. Factsheet: [Covid 19: modellazione matematica in public health](https://redazionelive.inail.it/cs/internet/comunicazione/pubblicazioni/catalogo-generale/pubbl-covid19-modellazione-matematica-public-health.html).
 
