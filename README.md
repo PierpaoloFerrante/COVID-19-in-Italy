@@ -2,10 +2,12 @@
 
 This project aims to provide access to and analyze Italian institutional public data on COVID-19. 
 
-The used data are freely available and collected by the COVID-19 surveillance system, which is managed by the [Italian Health Institute](https://www.iss.it/)  (ISS). The [Civil Protection](https://emergenze.protezionecivile.gov.it/it/) daily publishes regional data [here](https://github.com/pcm-dpc/COVID-19), while the ISS maintains, checks, corrects and updates regional records on COVID-19 infections in a national register as described [here](https://www.epicentro.iss.it/coronavirus/sars-cov-2-sorveglianza).
+- COVID-19 surveillance system: The used data are freely available and collected by the COVID-19 surveillance system, which is managed by the [Italian Health Institute](https://www.iss.it/)  (ISS). The [Civil Protection](https://emergenze.protezionecivile.gov.it/it/) daily publishes regional data [here](https://github.com/pcm-dpc/COVID-19), while the ISS maintains, checks, corrects and updates regional records on COVID-19 infections in a national register as described [here](https://www.epicentro.iss.it/coronavirus/sars-cov-2-sorveglianza).
 
 A negative binomial model was developed to estimate daily incidence cases based on the number of daily deaths and virus lethality. The lethality of the orginal strain is updated daily, incorporating hazards ratios of virus variants weighted by their prevalences and the relative risks of vaccinated individuals versus unvaccinated individuals weigheted by population's vaccine coverage.  
 For more details on the model, refer to the [published article](https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full).
+
+- National hospital discharge register: The used data are available from the ministry of health upon reasonible request for research purposes. National hospitalization costs of 2021-2022 COVID-19 patients were estimated through National Standard Hospital Charges as defined by [the Health Ministry’s decree of 12 October 2012](https://www.gazzettaufficiale.it/eli/id/2013/01/28/13A00528/sg)
 
 
 # Content
