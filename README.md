@@ -29,7 +29,7 @@ For more details on the model, refer to the [published article](https://www.fron
 
 The folder "Publications" contains the published material in references:
 - HospitalizationCosts.pdf is the paper [1] providing reccomentations based on research topic papers results.
-- Editorial2023.pdf is the paper [3] providing reccomentations based on research topic papers results.
+- Editorial2023.pdf is the paper [3] providing reccomentations based on papers results of research topic [2].
 - NegBinModel.pdf is the paper [4] included in the research topic [2], anyalizing the first 2 years of COVI-19 in Italy.
 - BaseModel.pdf is the paper [5] anyalizing the first year of COVI-19 in Italy and introducing the basis for negative binomial model.
 - ModelValidation.pdf is the fact sheet [6] summarizing the project results and comparing avoided infections and deaths due to the vaccines with those obtained by the ISS in their 2022 [tecnical report](https://www.iss.it/documents/20126/6703853/NT_Eventi+evitati+COVID19_LAST.pdf/a140e155-bd62-adcd-1b29-d1be3464ed48?t=1649832260103).
