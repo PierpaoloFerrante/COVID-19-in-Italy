@@ -1,6 +1,6 @@
 # Epidemiology of COVID-19 in Italy (2020-2022)
 ## Overview
-This repository contains analyses of COVID-19 **Italian insitutional data** from 2020 to 2022, focusing on:
+**This repository contains analyses of COVID-19 Italian insitutional data from 2020 to 2022**, focusing on:
 - **Epidemiological trends**: a novel approach based on a [negative binomial model](https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full) that estimates daily incidence cases from mortality data and virus lethality rates.
 - **Hospital burden quantification**: including [cost estimates](https://www.mdpi.com/2227-9032/12/10/958) derived from the DRG (Diagnosis-Related Group) coding system.
 
