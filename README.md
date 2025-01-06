@@ -55,7 +55,7 @@ The folder "Publications" contains the published material in references:
 
 5. Research topic 2 (2022-2024): [Primary Health Care: Challenges and Recommendations during a Pandemic](https://www.mdpi.com/journal/healthcare/special_issues/Primary_Health_Care_Pandemic).
 
-6. Research topic 1 (2022-2023): [lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics](https://www.frontiersin.org/research-topics/42790/lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics).
+6. Research topic 1 (2022-2023): [Lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics](https://www.frontiersin.org/research-topics/42790/lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics).
    
 8. Factsheet (2023): [Covid 19: modellazione matematica in public health](https://redazionelive.inail.it/cs/internet/comunicazione/pubblicazioni/catalogo-generale/pubbl-covid19-modellazione-matematica-public-health.html).
 
