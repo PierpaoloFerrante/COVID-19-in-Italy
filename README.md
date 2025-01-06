@@ -47,15 +47,15 @@ The folder "Publications" contains the published material in references:
    
 1. Paper (2024): [The First Two Years of COVID-19 Hospitalization Characteristics and Costs: Results from the National Discharge Registry](https://www.mdpi.com/2227-9032/12/10/958).
 
-2. Research topic (2022-2024): [Primary Health Care: Challenges and Recommendations during a Pandemic](https://www.mdpi.com/journal/healthcare/special_issues/Primary_Health_Care_Pandemic).
+2. Editorial (2023): [Reccomendations based on results from research topic 1](https://www.frontiersin.org/articles/10.3389/fpubh.2023.1281493/full)
 
-3. Research topic (2022-2023): [lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics](https://www.frontiersin.org/research-topics/42790/lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics).
-
-4. Editorial (2023): [Reccomendations based on research topic results](https://www.frontiersin.org/articles/10.3389/fpubh.2023.1281493/full)
-
-5. Paper (2022): [The first 2 years of COVID-19 in Italy: Incidence, lethality, and health policies](https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full).
+3. Paper (2022): [The first 2 years of COVID-19 in Italy: Incidence, lethality, and health policies](https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full).
    
-6. Paper (2022): [The first year of COVID-19 in Italy: Incidence, lethality, and health policies](https://journals.sagepub.com/doi/10.4081/jphr.2021.2201).
-  
-7. Factsheet (2023): [Covid 19: modellazione matematica in public health](https://redazionelive.inail.it/cs/internet/comunicazione/pubblicazioni/catalogo-generale/pubbl-covid19-modellazione-matematica-public-health.html).
+4. Paper (2022): [The first year of COVID-19 in Italy: Incidence, lethality, and health policies](https://journals.sagepub.com/doi/10.4081/jphr.2021.2201).
+
+5. Research topic 2 (2022-2024): [Primary Health Care: Challenges and Recommendations during a Pandemic](https://www.mdpi.com/journal/healthcare/special_issues/Primary_Health_Care_Pandemic).
+
+6. Research topic 1 (2022-2023): [lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics](https://www.frontiersin.org/research-topics/42790/lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics).
+   
+8. Factsheet (2023): [Covid 19: modellazione matematica in public health](https://redazionelive.inail.it/cs/internet/comunicazione/pubblicazioni/catalogo-generale/pubbl-covid19-modellazione-matematica-public-health.html).
 
