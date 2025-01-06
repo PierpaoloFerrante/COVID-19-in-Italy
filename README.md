@@ -1,17 +1,19 @@
 # Epidemiology of COVID-19 in Italy, 2020-2022
+##Overview
+This repository contains:
 
-This project aims to provide access to and analyze Italian institutional public data on COVID-19. 
+Analysis of COVID-19 epidemiology in Italy from 2020-2022, using a novel model to estimate daily incidence cases through mortality data and virus lethality rates
+The quantification of the hospital burden including costs estimated through the DRG coding system
+provide access to and analyze Italian institutional public data on COVID-19. 
 
+##Data source
 - **COVID-19 surveillance system**: The [used data](https://github.com/floatingpurr/covid-19_sorveglianza_integrata_italia/tree/main/data/2023-09-27) are freely available and collected by the COVID-19 surveillance system, which is managed by the [Italian Health Institute (ISS)](https://www.iss.it/). The [Civil Protection](https://emergenze.protezionecivile.gov.it/it/) daily publishes regional data [here](https://github.com/pcm-dpc/COVID-19), while the ISS maintains, checks, corrects and updates regional records on COVID-19 infections in a national register as described [here](https://www.epicentro.iss.it/coronavirus/sars-cov-2-sorveglianza).
-
-   A negative binomial model was developed to estimate daily incidence cases based on the number of daily deaths and virus lethality. The lethality of the orginal strain is updated daily, incorporating hazards ratios of virus variants weighted by their prevalences and the relative risks of vaccinated individuals versus unvaccinated individuals weigheted by population's vaccine coverage.  
-For more details on the model, refer to the [published article](https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full).
 
 - **National Hospital Discharge Register**: The [used data](https://www.salute.gov.it/portale/assistenzaOspedaliera/dettaglioContenutiAssistenzaOspedaliera.jsp?lingua=italiano&id=1232&area=ricoveriOspedalieri&menu=rilevazione) are available from the Ministry of Health upon reasonible request for research purposes. National hospitalization costs of 2021-2022 COVID-19 patients were estimated through National Standard Hospital Charges, as defined by [the Health Ministry’s decree of 12 October 2012](https://www.gazzettaufficiale.it/eli/id/2013/01/28/13A00528/sg), and the Covid-19 extra costs, as defined by [the Health Ministry’s decree of 12 August 2021](https://www.gazzettaufficiale.it/eli/id/2021/11/19/21A06765/sg).
 All the results are published [here](https://www.mdpi.com/2227-9032/12/10/958).
 
 
-# Content
+## Content
 
 ***Data***
 - The input data are stored in the folder "Data\Files", which contains daily condirmed and deaths cases, vaccine coverage of the population, prevalence of variants, lethality of the original strain as well as estimated relative risks of acquiring the infection or dying from it for vanninated Vs unvaccinated individuals.
@@ -36,7 +38,7 @@ The folder "Publications" contains the published material in references:
 - NegBinModelValidation.pdf is the fact sheet [6] summarizing the project results and comparing avoided infections and deaths due to the vaccines with those obtained by the ISS in their 2022 [tecnical report](https://www.iss.it/documents/20126/6703853/NT_Eventi+evitati+COVID19_LAST.pdf/a140e155-bd62-adcd-1b29-d1be3464ed48?t=1649832260103).
 
 
-# Usage
+## Usage
 - Download all the .xlsx and .csv files from the "Data/Files" folder to your local directory.
 - Open the "main.R" file and modify the line 152 by changing the path in the variable "your_data_folder" from "C:\\\your\\\local\\\folder\\\\" to the path of your local folder containing the downloaded data.
 - Run the corrected "main.R" file to perform the statistical analysis.
@@ -45,7 +47,7 @@ The folder "Publications" contains the published material in references:
 
 
 
-# References
+## References
    
 1. Paper (2024): [The First Two Years of COVID-19 Hospitalization Characteristics and Costs: Results from the National Discharge Registry](https://www.mdpi.com/2227-9032/12/10/958).
 
