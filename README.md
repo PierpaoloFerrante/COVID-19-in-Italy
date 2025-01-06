@@ -1,12 +1,10 @@
 # Epidemiology of COVID-19 in Italy, 2020-2022
-##Overview
-This repository contains:
+## Overview
+This repository contains analyses of 2020-2022 COVID-19 Italian insitutional data on:
+- The epidemiology using a novel model to estimate daily incidence cases through mortality data and virus lethality rates.
+- The quantification of the hospital burden including costs estimated through the DRG coding system.
 
-Analysis of COVID-19 epidemiology in Italy from 2020-2022, using a novel model to estimate daily incidence cases through mortality data and virus lethality rates
-The quantification of the hospital burden including costs estimated through the DRG coding system
-provide access to and analyze Italian institutional public data on COVID-19. 
-
-##Data source
+## Data source
 - **COVID-19 surveillance system**: The [used data](https://github.com/floatingpurr/covid-19_sorveglianza_integrata_italia/tree/main/data/2023-09-27) are freely available and collected by the COVID-19 surveillance system, which is managed by the [Italian Health Institute (ISS)](https://www.iss.it/). The [Civil Protection](https://emergenze.protezionecivile.gov.it/it/) daily publishes regional data [here](https://github.com/pcm-dpc/COVID-19), while the ISS maintains, checks, corrects and updates regional records on COVID-19 infections in a national register as described [here](https://www.epicentro.iss.it/coronavirus/sars-cov-2-sorveglianza).
 
 - **National Hospital Discharge Register**: The [used data](https://www.salute.gov.it/portale/assistenzaOspedaliera/dettaglioContenutiAssistenzaOspedaliera.jsp?lingua=italiano&id=1232&area=ricoveriOspedalieri&menu=rilevazione) are available from the Ministry of Health upon reasonible request for research purposes. National hospitalization costs of 2021-2022 COVID-19 patients were estimated through National Standard Hospital Charges, as defined by [the Health Ministry’s decree of 12 October 2012](https://www.gazzettaufficiale.it/eli/id/2013/01/28/13A00528/sg), and the Covid-19 extra costs, as defined by [the Health Ministry’s decree of 12 August 2021](https://www.gazzettaufficiale.it/eli/id/2021/11/19/21A06765/sg).
