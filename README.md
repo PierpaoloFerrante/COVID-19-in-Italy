@@ -2,7 +2,7 @@
 ## Overview
 This repository contains analyses of COVID-19 Italian insitutional data from 2020 to 2022, focusing on:
 - **Epidemiological trends**: a novel approach based on a [negative binomial model](https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full) that estimates daily incidence cases from mortality data and virus lethality rates.
-- **Hospital burden quantification**: including [cost estimate](https://www.mdpi.com/2227-9032/12/10/958)s derived from the DRG (Diagnosis-Related Group) coding system.
+- **Hospital burden quantification**: including [cost estimates](https://www.mdpi.com/2227-9032/12/10/958) derived from the DRG (Diagnosis-Related Group) coding system.
 
 ## Data source
 - **COVID-19 surveillance system**: The [used data](https://github.com/floatingpurr/covid-19_sorveglianza_integrata_italia/tree/main/data/2023-09-27) are freely available and collected by the COVID-19 surveillance system, which is managed by the [Italian Health Institute (ISS)](https://www.iss.it/). The [Civil Protection](https://emergenze.protezionecivile.gov.it/it/) daily publishes regional data [here](https://github.com/pcm-dpc/COVID-19), while the ISS maintains, checks, corrects and updates regional records on COVID-19 infections in a national register as described [here](https://www.epicentro.iss.it/coronavirus/sars-cov-2-sorveglianza).
