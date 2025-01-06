@@ -8,7 +8,7 @@ This project aims to provide access to and analyze Italian institutional public 
 For more details on the model, refer to the [published article](https://www.frontiersin.org/articles/10.3389/fpubh.2022.986743/full).
 
 - **National Hospital Discharge Register**: The [used data](https://www.salute.gov.it/portale/assistenzaOspedaliera/dettaglioContenutiAssistenzaOspedaliera.jsp?lingua=italiano&id=1232&area=ricoveriOspedalieri&menu=rilevazione) are available from the Ministry of Health upon reasonible request for research purposes. National hospitalization costs of 2021-2022 COVID-19 patients were estimated through National Standard Hospital Charges, as defined by [the Health Ministry’s decree of 12 October 2012](https://www.gazzettaufficiale.it/eli/id/2013/01/28/13A00528/sg), and the Covid-19 extra costs, as defined by [the Health Ministry’s decree of 12 August 2021](https://www.gazzettaufficiale.it/eli/id/2021/11/19/21A06765/sg).
-All the results are published [here](https://www.mdpi.com/2227-9032/12/10/958)
+All the results are published [here](https://www.mdpi.com/2227-9032/12/10/958).
 
 
 # Content
