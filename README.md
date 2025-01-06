@@ -48,7 +48,7 @@ The folder "Publications" contains the published material in references:
    
 1. Paper (2024): [The First Two Years of COVID-19 Hospitalization Characteristics and Costs: Results from the National Discharge Registry](https://www.mdpi.com/2227-9032/12/10/958).
 
-2. Research topic (2022-2023): [Primary Health Care: Challenges and Recommendations during a Pandemic](https://www.mdpi.com/journal/healthcare/special_issues/Primary_Health_Care_Pandemic).
+2. Research topic (2022-2024): [Primary Health Care: Challenges and Recommendations during a Pandemic](https://www.mdpi.com/journal/healthcare/special_issues/Primary_Health_Care_Pandemic).
 
 3. Research topic (2022-2023): [lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics](https://www.frontiersin.org/research-topics/42790/lessons-and-policy-consequences-of-mathematical-modelling-in-relation-to-ongoing-pandemics).
 
