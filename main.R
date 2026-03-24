@@ -13,7 +13,7 @@ Eta <- data.frame(Eta = 0:101, CEta = age_labels[age_intervals])
 Eta$CEtaCod <- ifelse(Eta$Eta<90,age_intervals,19)
 Eta$CEtaCod2 <- ifelse(Eta$Eta<90,ceiling(Eta$CEtaCod / 2),10)
 Eta$CEta2 <- ifelse(Eta$Eta<90,paste0(floor(Eta$Eta / 10) * 10, "-", floor(Eta$Eta / 10) * 10 + 9),"90+")
-Eta$CEtaCod3 <- ceiling(Eta$Eta / 5) * 5 + 2
+Eta$CEtaCod3 <- floor(Eta$Eta / 5) * 5 + 2
 
 rm(list=c("dates","age_intervals","age_labels"))
 
